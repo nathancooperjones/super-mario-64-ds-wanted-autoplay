@@ -1,3 +1,15 @@
+# Data directory that is way too large to commit to GitHub
+data/*
+
+# Model files directory that is also way too large to commit to GitHub
+runs/
+
+# MacOS-generated files
+.DS_Store
+
+# VSCode-generated files
+.vscode/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
