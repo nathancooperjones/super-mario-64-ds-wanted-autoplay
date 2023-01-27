@@ -1,5 +1,9 @@
 # Step 1. Generating Training Data
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/31417712/215226689-85b2addd-ef27-445c-aedd-3dbf6c28e516.png">
+</p>
+
 This directory contains the notebook to generate the training data necessary for the object detection model, ``generate-data.ipynb``.
 
 The parameters in this notebook are the exact ones I used to generate the dataset I used for my model training run, but due to the random nature of how some of the parameters are chosen, your run might not _exactly_ be the same as mine, but it should be close enough that it won't make too much of a difference when modeling.
