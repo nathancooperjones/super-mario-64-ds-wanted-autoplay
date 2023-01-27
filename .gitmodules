@@ -1,5 +1,5 @@
-[submodule "02_train_detector/COCO2YOLO"]
-	path = 02_train_detector/COCO2YOLO
+[submodule "01_generate_data/COCO2YOLO"]
+	path = 01_generate_data/COCO2YOLO
 	url = https://github.com/alexmihalyk23/COCO2YOLO.git
 [submodule "02_train_detector/yolov5"]
 	path = 02_train_detector/yolov5
