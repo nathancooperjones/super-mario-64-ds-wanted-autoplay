@@ -8,6 +8,10 @@ You'll also need the ROM file for Super Mario 64 DS. To avoid any legal issues, 
 
 With the emulator installed and the ROM file downloaded, you should be able to open the ROM in the emulator and see the Nintendo logo, followed by a 3D model of a star instructing you to tap it! If so, this is great - you have done everything right!
 
+<p align="center">
+  <img width="500" src="https://user-images.githubusercontent.com/31417712/215226899-b6fd9077-49e8-45a3-9ae1-5dfb17eee375.png">
+</p>
+
 Before running the script, ensure that the emulator window is visible and at the forefront of your screen (if any other window is blocking it, the Python program won't work correctly).
 
 Using the weights from the model trained in the previous step, ``02_train_detector``, run the following command in a terminal window to start the Python program:
@@ -20,7 +24,9 @@ And voila - the game should now be playing itself! 🎉
 
 See the video below for the first hour of my run using this very script:
 
-[![](https://img.youtube.com/vi/IXq1frVs8ME/0.jpg)](https://www.youtube.com/watch?v=IXq1frVs8ME)
+<p align="center">
+    <a href="https://www.youtube.com/watch?v=IXq1frVs8ME"><img src="https://img.youtube.com/vi/IXq1frVs8ME/0.jpg"></a>
+</p>
 
 Enjoy!
 
