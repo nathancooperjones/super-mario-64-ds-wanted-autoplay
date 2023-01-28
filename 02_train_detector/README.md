@@ -2,9 +2,9 @@
 
 It's time to train a model!
 
-First, we need to set up the ``data.yaml`` file. Replace the ``XX`` in the training and validation data paths with the absolute path to those directories containing both the images and YOLO-compatible annotation files.
+First, we need to set up the [``data.yaml``](data.yaml) file. Replace the ``XX`` in the training and validation data paths with the absolute path to those directories containing both the images and YOLO-compatible annotation files.
 
-With this, navigate to the ``yolov5`` directory and use the following one-liner to kick off a training run:
+With this, navigate to the [``yolov5``](yolov5) directory and use the following one-liner to kick off a training run:
 
 ```bash
 python train.py --data ../data.yaml --epochs 100 --weights '' --cfg yolov5s.yaml --batch-size -1
@@ -12,4 +12,4 @@ python train.py --data ../data.yaml --epochs 100 --weights '' --cfg yolov5s.yaml
 
 If you want to skip this step and instead use the model weights from my training run, you can download them [here](https://thisboredapedoesnotexist.s3.amazonaws.com/super-mario-64-ds-autoplayer/best.pt).
 
-Once you have a trained model, make note of where the weights are stored, as you'll need this for the next step, ``03_play_game``!
+Once you have a trained model, make note of where the weights are stored, as you'll need this for the next step, [``03_play_game``](../03_play_game)!

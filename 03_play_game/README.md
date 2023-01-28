@@ -14,7 +14,7 @@ With the emulator installed and the ROM file downloaded, you should be able to o
 
 Before running the script, ensure that the emulator window is visible and at the forefront of your screen (if any other window is blocking it, the Python program won't work correctly).
 
-Using the weights from the model trained in the previous step, ``02_train_detector``, run the following command in a terminal window to start the Python program:
+Using the weights from the model trained in the previous step, [``02_train_detector``](../02_train_detector), run the following command in a terminal window to start the Python program:
 
 ```bash
 python run.py --yolo_object_detection_model_weights=custom/path/to/weights.pt
@@ -32,7 +32,7 @@ Enjoy!
 
 -----
 
-NOTE: If you don't have a Mac device, this code will, unfortunately, not work. If you have a Mac device but not [one with Apple silicon](https://support.apple.com/en-us/HT211814), change the following line in ``run.py`` from:
+NOTE: If you don't have a Mac device, this code will, unfortunately, not work. If you have a Mac device but not [one with Apple silicon](https://support.apple.com/en-us/HT211814), change the following line in [``run.py``](run.py) from:
 
 ```python
 ...

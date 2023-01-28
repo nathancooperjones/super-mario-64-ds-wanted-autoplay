@@ -4,13 +4,13 @@
   <img src="https://user-images.githubusercontent.com/31417712/215226689-85b2addd-ef27-445c-aedd-3dbf6c28e516.png">
 </p>
 
-This directory contains the notebook to generate the training data necessary for the object detection model, ``generate-data.ipynb``.
+This directory contains the notebook to generate the training data necessary for the object detection model, [``generate-data.ipynb``](generate-data.ipynb).
 
 The parameters in this notebook are the exact ones I used to generate the dataset I used for my model training run, but due to the random nature of how some of the parameters are chosen, your run might not _exactly_ be the same as mine, but it should be close enough that it won't make too much of a difference when modeling.
 
 The output of the notebook will be a directory called ``data/`` in this directory's parent directory (``..``). It will contain COCO-compatible annotations in a single ``annotations.json`` file as well as each of the generated images in a directory ``images/``.
 
-While these are perfectly valid COCO annotations, the YOLOv5 model needs the annotations to be in... well... YOLO format. Luckily, the codebase ``COCO2YOLO`` helps do the conversion really easily.
+While these are perfectly valid COCO annotations, the YOLOv5 model needs the annotations to be in... well... YOLO format. Luckily, the codebase [``COCO2YOLO``](COCO2YOLO) helps do the conversion really easily.
 
 After executing the notebook, navigate your terminal to this directory and execute the following:
 
@@ -52,4 +52,4 @@ data
 └── annotations.json
 ```
 
-If you have everything in order, congratulations - the hardest step is done! You can now continue on to the next step: ``02_train_detector``.
+If you have everything in order, congratulations - the hardest step is done! You can now continue on to the next step: [``02_train_detector``](02_train_detector).
