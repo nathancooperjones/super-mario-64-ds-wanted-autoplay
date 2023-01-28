@@ -10,7 +10,7 @@ The parameters in this notebook are the exact ones I used to generate the datase
 
 The output of the notebook will be a directory called ``data/`` in this directory's parent directory (``..``). It will contain COCO-compatible annotations in a single ``annotations.json`` file as well as each of the generated images in a directory ``images/``.
 
-While these are perfectly valid COCO annotations, the YOLOv5 model needs the annotations to be in... well... YOLO format. Luckily, the codebase [``COCO2YOLO``](COCO2YOLO) helps do the conversion really easily.
+While these are perfectly valid COCO annotations, the YOLOv5 model needs the annotations to be in... well... YOLO format. Luckily, the codebase [``COCO2YOLO``](https://github.com/alexmihalyk23/COCO2YOLO/tree/91d6f5c687209a7eaeb0db12ece17d44ca271a58) helps do the conversion really easily.
 
 After executing the notebook, navigate your terminal to this directory and execute the following:
 
@@ -52,4 +52,4 @@ data
 └── annotations.json
 ```
 
-If you have everything in order, congratulations - the hardest step is done! You can now continue on to the next step: [``02_train_detector``](02_train_detector).
+If you have everything in order, congratulations - the hardest step is done! You can now continue on to the next step: [``02_train_detector``](../02_train_detector).
