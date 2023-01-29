@@ -18,9 +18,10 @@ BOTTOM_BORDER_PIXELS = 48
 
 def main(
     yolo_object_detection_model_weights_path: str = '../runs/train/exp/weights/best.pt',
+    min_confidence: float = 0.9,
     verbose: bool = True,
 ) -> None:
-    """
+    r"""
     Running the full logic needed to play the "Wanted!" minigame on a DeSmuME DS emulator.
 
     Once the game is loaded in the emulator, this function can be run in a terminal with:
@@ -32,13 +33,21 @@ def main(
     To override the default arguments, you can use the following syntax:
 
     ```bash
-    python run.py --yolo_object_detection_model_weights=custom/path/to/weights.pt --verbose=False
+    python run.py \
+        --yolo_object_detection_model_weights=custom/path/to/weights.pt \
+        --min_confidence 0.8 \
+        --verbose=False
     ```
 
     Parameters
     ----------
     yolo_object_detection_model_weights_path: str
         Path to the trained YOLOv5 object detection model weights file
+    min_confidence: float
+        Minimum confidence a bounding box must be in order to proceed with a click action. Note that
+        if the highest confidence bounding box is less than ``min_confidence`` for more than 10
+        detections (5 seconds), this value will be ignored and the character with the highest
+        confidence score (which may be less than ``min_confidence``) will be clicked anyway
     verbose: bool
         Whether or not to display print statements to the shell or not
 
@@ -124,7 +133,7 @@ def main(
     )
 
     time.sleep(4)
-    from datetime import datetime
+
     while True:
         print('\n')
 
@@ -133,9 +142,7 @@ def main(
         if verbose:
             print('Searching for a character to find...')
 
-        print(datetime.now())
         character_to_find = get_character_to_search_for(image=image)
-        print(datetime.now())
 
         if character_to_find is None:
             if verbose:
@@ -148,6 +155,8 @@ def main(
 
         if verbose:
             print(f'Character to look for: {character_to_find}')
+
+        low_confidence_counter = 0
 
         while True:
             image = take_screenshot_of_window(window=window)
@@ -176,13 +185,20 @@ def main(
                 time.sleep(0.5)
                 continue
 
-            if highest_confidence_box['confidence'] < 0.9:
+            if low_confidence_counter > 10:
+                if verbose:
+                    print(
+                        'Bounding box confidence is not high enough to click - but I am impatient. '
+                        'Clicking it anyway and hoping for the best!.'
+                    )
+            elif highest_confidence_box['confidence'] < min_confidence:
                 if verbose:
                     print(
                         'Bounding box confidence is not high enough to click - waiting a bit and '
                         'trying again soon.'
                     )
 
+                low_confidence_counter += 1
                 time.sleep(0.5)
                 continue
 
