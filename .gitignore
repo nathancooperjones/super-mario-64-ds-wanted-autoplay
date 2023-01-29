@@ -10,6 +10,9 @@ runs/
 # VSCode-generated files
 .vscode/
 
+# DS ROMs that do NOT belong on GitHub
+*.nds
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
